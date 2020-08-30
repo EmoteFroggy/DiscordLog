@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { token, maxsize, makefile } = require('./config.json');
 const fs = require('fs');
 const moment = require('moment');
 const log = require('./log.js');
@@ -31,4 +30,4 @@ client.on('error', (err) => log.err(err));
 client.on('disconnect', () => log.log('disconnected from discord'));
 
 
-client.login(token);
+client.login(process.env.token);
